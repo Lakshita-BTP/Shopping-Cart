@@ -58,41 +58,15 @@
 											<ObjectStatus text="{ path : 'view>Product/Status', formatter : '.formatter.statusText' }" state="{ path : 'view>Product/Status', formatter : '.formatter.statusState'}"/>
 										</l:VerticalLayout>
 									</FlexBox>
-									<FlexBox
-										renderType="Bare"
-										justifyContent="Center">
-										<Image
-											src="{
-												path: 'view>Product/PictureUrl',
-												formatter : '.formatter.pictureUrl'
-											}"
-											densityAware="false"
-											width="50%"
-											height="50%"
-											press=".onSelectProduct"
-											tooltip="{i18n>openProductDetails} {view>Product/Name}"
-											alt="{i18n>alternativeImageText} {view>Product/Name}"/>
+									<FlexBox renderType="Bare" justifyContent="Center">
+										<Image src="{ path: 'view>Product/PictureUrl', formatter : '.formatter.pictureUrl' }" densityAware="false" width="50%" height="50%" press=".onSelectProduct" tooltip="{i18n>openProductDetails} {view>Product/Name}" alt="{i18n>alternativeImageText} {view>Product/Name}"/>
 									</FlexBox>
-									<Button
-										tooltip="{i18n>addToCart}"
-										type="Emphasized"
-										press=".onAddToCart"
-										icon="sap-icon://cart-3">
+									<Button tooltip="{i18n>addToCart}" type="Emphasized" press=".onAddToCart" icon="sap-icon://cart-3">
 										<layoutData>
 											<l:GridData span="XL4 L4 M4 S4"/>
 										</layoutData>
 									</Button>
-									<ObjectListItem
-										class="welcomePrice"
-										number="{
-											parts:[
-												{path:'view>Product/Price'},
-												{path:'view>/Currency'}
-											],
-											type: 'CurrencyType',
-											formatOptions:{showMeasure: false}
-										}"
-										numberUnit="{view>/Currency}">
+									<ObjectListItem class="welcomePrice" number="{ parts:[ {path:'view>Product/Price'}, {path:'view>/Currency'} ], type: 'CurrencyType', formatOptions:{showMeasure: false} }" numberUnit="{view>/Currency}">
 										<layoutData>
 											<l:GridData span="XL8 L8 M8 S8"/>
 										</layoutData>
