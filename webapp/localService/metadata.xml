@@ -90,7 +90,6 @@
 				<NavigationProperty Name="Product" Relationship="EPM_DEVELOPER_SCENARIO_SRV.FK_FeaturedProduct_Product" FromRole="FeaturedProduct" ToRole="Product"/>
 			</EntityType>
 
-
 			<Association Name="FK_ProductCategory_Product">
 				<End Role="Product" Type="EPM_DEVELOPER_SCENARIO_SRV.Product" Multiplicity="*"/>
 				<End Role="ProductCategory" Type="EPM_DEVELOPER_SCENARIO_SRV.ProductCategory" Multiplicity="1"/>
