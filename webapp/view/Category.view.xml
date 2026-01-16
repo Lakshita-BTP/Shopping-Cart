@@ -9,8 +9,7 @@
 		<content>
 			<List id="productList" mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}" selectionChange=".onProductDetails" noDataText="{i18n>categoryNoData}" busyIndicatorDelay="0" items="{ path : 'Products', sorter : { path : 'Name', descending : false } }">
 				<items>
-					<ObjectListItem type="{= ${device>/system/phone} ? 'Active' : 'Inactive'}" press=".onProductDetails" iconDensityAware="false"
-						icon="{ path : 'PictureUrl', formatter : '.formatter.pictureUrl' }" title="{Name}" number="{ path : 'Price', formatter : '.formatter.price' }" numberUnit="{CurrencyCode}" tooltip="{i18n>openProductDetails} {Name}">
+					<ObjectListItem type="{= ${device>/system/phone} ? 'Active' : 'Inactive'}" press=".onProductDetails" iconDensityAware="false" icon="{ path : 'PictureUrl', formatter : '.formatter.pictureUrl' }" title="{Name}" number="{ path : 'Price', formatter : '.formatter.price' }" numberUnit="{CurrencyCode}" tooltip="{i18n>openProductDetails} {Name}">
 						<attributes>
 							<ObjectAttribute visible="true" text="{SupplierName}"/>
 							<ObjectAttribute visible="{device>/system/desktop}" active="true" text="{i18n>CompareWith}" press=".compareProducts"/>
