@@ -6,11 +6,8 @@
 		<Schema Namespace="EPM_DEVELOPER_SCENARIO_SRV" xml:lang="en"
 			xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
 
-			<EntityType Name="Product" sap:content-version="1"
-				xmlns:sap="http://www.sap.com/Protocols/SAPData">
-				<Key>
-					<PropertyRef Name="ProductId"/>
-				</Key>
+			<EntityType Name="Product" sap:content-version="1" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+				<Key> <PropertyRef Name="ProductId"/> </Key>
 				<Property Name="ProductId" Type="Edm.String" Nullable="false"
 					MaxLength="10" sap:label="Product ID" sap:creatable="false"
 					sap:updatable="false"/>
@@ -63,20 +60,11 @@
 
 			</EntityType>
 
-			<EntityType Name="ProductCategory" sap:content-version="1"
-				xmlns:sap="http://www.sap.com/Protocols/SAPData">
-				<Key>
-					<PropertyRef Name="Category"/>
-				</Key>
-				<Property Name="Category" Type="Edm.String" Nullable="false"
-					MaxLength="40" sap:creatable="false" sap:updatable="false"
-					sap:sortable="false" sap:filterable="false"/>
-				<Property Name="CategoryName" Type="Edm.String" Nullable="false"
-					sap:creatable="false" sap:updatable="false" sap:sortable="false"
-					sap:filterable="false"/>
-				<Property Name="NumberOfProducts" Type="Edm.Int32"
-					Nullable="false" sap:creatable="false" sap:updatable="false"
-					sap:sortable="false" sap:filterable="false"/>
+			<EntityType Name="ProductCategory" sap:content-version="1" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+				<Key> <PropertyRef Name="Category"/> </Key>
+				<Property Name="Category" Type="Edm.String" Nullable="false" MaxLength="40" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="CategoryName" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="NumberOfProducts" Type="Edm.Int32" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
 				<NavigationProperty Name="Products" Relationship="EPM_DEVELOPER_SCENARIO_SRV.FK_ProductCategory_Product" FromRole="ProductCategory" ToRole="Product"/>
 			</EntityType>
 
@@ -116,27 +104,15 @@
 				</ReferentialConstraint>
 			</Association>
 
-			<EntityContainer Name="EPM_DEVELOPER_SCENARIO_SRV"
-				m:IsDefaultEntityContainer="true">
-				<EntitySet Name="Products" EntityType="EPM_DEVELOPER_SCENARIO_SRV.Product"
-					sap:creatable="false" sap:updatable="false" sap:deletable="false"
-					sap:pageable="false" sap:content-version="1"
-					xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
-				<EntitySet Name="ProductCategories"
-					EntityType="EPM_DEVELOPER_SCENARIO_SRV.ProductCategory"
-					sap:creatable="false" sap:updatable="false" sap:deletable="false"
-					sap:pageable="false" sap:content-version="1"
-					xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
-				<EntitySet Name="FeaturedProducts" EntityType="EPM_DEVELOPER_SCENARIO_SRV.FeaturedProduct"
-					sap:content-version="1"
-					xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
-				<AssociationSet Name="EPM_DEVELOPER_SCENARIO_SRV.FK_ProductCategory_Product"
-					Association="EPM_DEVELOPER_SCENARIO_SRV.FK_ProductCategory_Product">
+			<EntityContainer Name="EPM_DEVELOPER_SCENARIO_SRV" m:IsDefaultEntityContainer="true">
+				<EntitySet Name="Products" EntityType="EPM_DEVELOPER_SCENARIO_SRV.Product" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1" xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+				<EntitySet Name="ProductCategories" EntityType="EPM_DEVELOPER_SCENARIO_SRV.ProductCategory" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1" xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+				<EntitySet Name="FeaturedProducts" EntityType="EPM_DEVELOPER_SCENARIO_SRV.FeaturedProduct" sap:content-version="1" xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+				<AssociationSet Name="EPM_DEVELOPER_SCENARIO_SRV.FK_ProductCategory_Product" Association="EPM_DEVELOPER_SCENARIO_SRV.FK_ProductCategory_Product">
 					<End Role="Product" EntitySet="Products"/>
 					<End Role="ProductCategory" EntitySet="ProductCategories"/>
 				</AssociationSet>
-				<AssociationSet Name="EPM_DEVELOPER_SCENARIO_SRV.FK_FeaturedProduct_Product"
-					Association="EPM_DEVELOPER_SCENARIO_SRV.FK_FeaturedProduct_Product">
+				<AssociationSet Name="EPM_DEVELOPER_SCENARIO_SRV.FK_FeaturedProduct_Product" Association="EPM_DEVELOPER_SCENARIO_SRV.FK_FeaturedProduct_Product">
 					<End Role="Product" EntitySet="Products"/>
 					<End Role="FeaturedProduct" EntitySet="FeaturedProducts"/>
 				</AssociationSet>
