@@ -82,12 +82,8 @@
 				<End Role="Product" Type="EPM_DEVELOPER_SCENARIO_SRV.Product" Multiplicity="*"/>
 				<End Role="ProductCategory" Type="EPM_DEVELOPER_SCENARIO_SRV.ProductCategory" Multiplicity="1"/>
 				<ReferentialConstraint>
-					<Principal Role="Product">
-						<PropertyRef Name="Category"/>
-					</Principal>
-					<Dependent Role="ProductCategory">
-						<PropertyRef Name="Category"/>
-					</Dependent>
+					<Principal Role="Product"> <PropertyRef Name="Category"/> </Principal>
+					<Dependent Role="ProductCategory"> <PropertyRef Name="Category"/> </Dependent>
 				</ReferentialConstraint>
 			</Association>
 
